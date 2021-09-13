@@ -1,6 +1,8 @@
 {
     "title":{
         "error": "Lỗi",
-        "pageNotFound": "Không tìm thấy trang"
+        "pageNotFound": "Không tìm thấy trang",
+        "login": "Đăng nhập",
+        "register": "Đăng ký"
     }
  }

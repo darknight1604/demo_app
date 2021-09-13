@@ -1,6 +1,8 @@
 {
     "title":{
         "error": "ERROR",
-        "pageNotFound": "Page not found"
+        "pageNotFound": "Page not found",
+        "login": "LOG IN",
+        "register": "REGISTER"
     }
  }
