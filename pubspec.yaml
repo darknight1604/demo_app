@@ -71,12 +71,6 @@ flutter:
         - asset: fonts/Comfortaa-Medium.ttf
         - asset: fonts/Comfortaa-Regular.ttf
           # style: italic
-    - family: Roboto
-      fonts:
-        - asset: fonts/Roboto-Bold.ttf
-        - asset: fonts/Roboto-Italic.ttf
-        - asset: fonts/Roboto-Regular.ttf
-          # weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
