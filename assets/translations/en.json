@@ -1,3 +1,6 @@
 {
-    "msg":""
+    "title":{
+        "error": "ERROR",
+        "pageNotFound": "Page not found"
+    }
  }
