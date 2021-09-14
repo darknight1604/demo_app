@@ -1,4 +1,5 @@
-import 'package:demo_app/helper/roboto_text.dart';
+import 'package:demo_app/helper/custom_text.dart';
+import 'package:demo_app/route/route.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -53,12 +54,12 @@ class _InformationGroupWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RobotoText.createBoldText(
+                    CustomText.createBoldText(
                       str,
                       size: 13,
                       fontWeight: FontWeight.w700,
                     ),
-                    RobotoText.createNormalText(
+                    CustomText.createNormalText(
                       str2,
                       size: 11,
                     ),
@@ -87,25 +88,40 @@ class _ButtonGroupWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           createButton(
-            'title.login'.tr(),
+            'button.login'.tr(),
             Colors.black,
             Colors.white,
+            () {
+              _handleNavigateLogin(context);
+            },
             borderSide: BorderSide(
               width: 2.0,
               color: Colors.black,
             ),
           ),
           createButton(
-            'title.register'.tr(),
+            'button.register'.tr(),
             Colors.white,
             Colors.black,
+            () {
+              _handleNavigateRegister(context);
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget createButton(String name, Color textColor, Color backgroundColor,
+  void _handleNavigateRegister(context) {
+    Navigator.of(context).pushNamed(RouteGenerator.registerPage);
+  }
+
+  void _handleNavigateLogin(context) {
+    Navigator.of(context).pushNamed(RouteGenerator.loginPage);
+  }
+
+  Widget createButton(
+      String name, Color textColor, Color backgroundColor, Function onPress,
       {BorderSide? borderSide}) {
     ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       fixedSize: Size(167, 52),
@@ -116,8 +132,10 @@ class _ButtonGroupWidget extends StatelessWidget {
     return Flexible(
       child: ElevatedButton(
         style: buttonStyle,
-        onPressed: () {},
-        child: RobotoText.createBoldText(
+        onPressed: () {
+          onPress();
+        },
+        child: CustomText.createBoldText(
           name,
           size: 13,
           color: textColor,

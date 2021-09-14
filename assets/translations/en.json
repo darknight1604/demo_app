@@ -2,7 +2,33 @@
     "title":{
         "error": "ERROR",
         "pageNotFound": "Page not found",
+        "login": "Log in",
+        "register": "Register",
+        "processingData": "Processing data",
+        "policy": "By signing up, you agree to Photo's ",
+        "and": " and ",
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy",
+        "processing": "Processing {}"
+    },
+    "button":{
         "login": "LOG IN",
-        "register": "REGISTER"
+        "register": "REGISTER",
+        "signUp": "SIGN UP"
+    },
+    "hintText":{
+        "username": "Username",
+        "password": "Password",
+        "confirmPassword": "Confirm password"
+    },
+    "error":{
+        "usernameEmpty": "Please input username",
+        "usernameLengthMin": "Please input username with length at least 4",
+        "usernameLengthMax": "Please input username with length maximum 10",
+        "passwordEmpty": "Please input password",
+        "passwordLengthMin": "Please input password with length at least 4",
+        "passwordLengthMax": "Please input password with length maximum 10",
+        "confirmPasswordNotMatch": "Confirm password is not match your password",
+        "confirmPasswordEmpty": "Please input confirm password"
     }
  }

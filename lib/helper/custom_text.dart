@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class RobotoText {
+class CustomText {
   static Text createNormalText(
     String text, {
     double? size,
     Color? color,
+    String? fontFamily,
   }) {
     return Text(
       text,
       style: TextStyle(
-        // Roboto is the default font of the Material style
-        // fontFamily: 'Roboto',
+        fontFamily: fontFamily,
         fontSize: size,
         color: color,
       ),
@@ -21,12 +21,12 @@ class RobotoText {
     String text, {
     double? size,
     Color? color,
+    String? fontFamily,
   }) {
     return Text(
       text,
       style: TextStyle(
-        // Roboto is the default font of the Material style
-        // fontFamily: 'Roboto',
+        fontFamily: fontFamily,
         fontSize: size,
         fontStyle: FontStyle.italic,
         color: color,
@@ -39,12 +39,14 @@ class RobotoText {
     double? size,
     Color? color,
     FontWeight? fontWeight,
+    String? fontFamily,
   }) {
     return Text(
       text,
       style: TextStyle(
         // Roboto is the default font of the Material style
         // fontFamily: 'Roboto',
+        fontFamily: fontFamily,
         fontSize: size,
         fontWeight: fontWeight ?? FontWeight.w900, color: color,
       ),

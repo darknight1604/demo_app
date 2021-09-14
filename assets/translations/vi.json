@@ -3,6 +3,31 @@
         "error": "Lỗi",
         "pageNotFound": "Không tìm thấy trang",
         "login": "Đăng nhập",
-        "register": "Đăng ký"
+        "register": "Đăng ký",
+        "processingData": "Đang xử lý dữ liệu",
+        "policy": "Khi bạn đăng ký, bạn đã đồng ý với ",
+        "and": " và ",
+        "termsOfService": "Điều khoản dịch vụ",
+        "privacyPolicy": "Chính sách bảo mật"
+    },
+    "button":{
+        "login": "ĐĂNG NHẬP",
+        "register": "ĐĂNG KÝ",
+        "signUp": "ĐĂNG KÝ"
+    },
+    "hintText":{
+        "username": "Tài khoản",
+        "password": "Mật khẩu",
+        "confirmPassword": "Xác nhận mật khẩu"
+    },
+    "error":{
+        "usernameEmpty": "Vui lòng nhập Tài khoản",
+        "usernameLengthMin": "Vui lòng nhập tài khoản ít nhất 4 ký tự",
+        "usernameLengthMax": "Vui lòng nhập tài khoản tối đa 10 ký tự",
+        "passwordEmpty": "Vui lòng nhập Mật khẩu",
+        "passwordLengthMin": "Vui lòng nhập mật khẩu ít nhất 4 ký tự",
+        "passwordLengthMax": "Vui lòng nhập mật khẩu tối đa 10 ký tự",
+        "confirmPasswordNotMatch": "Xác nhận mật khẩu không trùng với mật khẩu",
+        "confirmPasswordEmpty": "Vui lòng nhập Xác nhận mật khẩu"
     }
  }

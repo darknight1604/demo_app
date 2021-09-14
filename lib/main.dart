@@ -23,16 +23,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
+          FocusManager.instance.primaryFocus!.unfocus();
+        }
+      },
+      child: MaterialApp(
+        title: 'Interview Demo',
+        theme: ThemeData(
+          backgroundColor: Colors.white,
+        ),
+        onGenerateRoute: RouteGenerator.generateRoute,
+        initialRoute: '/',
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
       ),
-      onGenerateRoute: RouteGenerator.generateRoute,
-      initialRoute: '/',
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
     );
   }
 }
