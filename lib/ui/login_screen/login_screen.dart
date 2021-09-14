@@ -1,15 +1,16 @@
+import 'package:demo_app/ui/common/common_util.dart';
 import 'package:flutter/material.dart';
+import 'body.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: CommonUtil.createAppBar(context),
+      body: Body(),
+    );
   }
 }
