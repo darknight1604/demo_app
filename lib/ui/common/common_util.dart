@@ -41,4 +41,19 @@ class CommonUtil {
       ),
     );
   }
+
+  static Future<void> showSnackBar(context, String title,
+      {int? secondDuration}) async {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          title,
+        ),
+        duration: Duration(
+          seconds:
+              secondDuration != null && secondDuration > 0 ? secondDuration : 2,
+        ),
+      ),
+    );
+  }
 }
