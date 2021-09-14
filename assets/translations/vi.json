@@ -8,7 +8,8 @@
         "policy": "Khi bạn đăng ký, bạn đã đồng ý với ",
         "and": " và ",
         "termsOfService": "Điều khoản dịch vụ",
-        "privacyPolicy": "Chính sách bảo mật"
+        "privacyPolicy": "Chính sách bảo mật",
+        "signUpSuccess": "Đăng ký thành công"
     },
     "button":{
         "login": "ĐĂNG NHẬP",

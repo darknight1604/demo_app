@@ -83,19 +83,33 @@ class __RegisterFormWidgetState extends State<_RegisterFormWidget> {
               }
               //validate data
               if (_formKey.currentState!.validate()) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      'title.processingData'.tr(),
-                    ),
-                  ),
-                );
+                context.read<RegisterBloc>().add(
+                      SignUpRequest(
+                        username: usernameController.text,
+                        password: passwordController.text,
+                      ),
+                    );
               }
             },
-            child: CustomText.createBoldText(
-              'button.signUp'.tr(),
-              size: 13,
-              color: Colors.white,
+            child: BlocConsumer<RegisterBloc, RegisterState>(
+              builder: (context, state) {
+                if (state is Loading) {
+                  return CircularProgressIndicator();
+                }
+                return CustomText.createBoldText(
+                  'button.signUp'.tr(),
+                  size: 13,
+                  color: Colors.white,
+                );
+              },
+              listener: (context, state) async {
+                if (state is SignUpSuccess) {
+                  await CommonUtil.showSnackBar(
+                      context, 'title.signUpSuccess'.tr());
+                  Navigator.of(context)
+                      .popAndPushNamed(RouteGenerator.loginPage);
+                }
+              },
             ),
           ),
         ],

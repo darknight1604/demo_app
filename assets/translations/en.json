@@ -9,7 +9,8 @@
         "and": " and ",
         "termsOfService": "Terms of Service",
         "privacyPolicy": "Privacy Policy",
-        "processing": "Processing {}"
+        "processing": "Processing {}",
+        "signUpSuccess": "Sign up success"
     },
     "button":{
         "login": "LOG IN",

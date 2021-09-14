@@ -1,5 +1,8 @@
+import 'package:demo_app/blocs/register_bloc/register_bloc.dart';
+import 'package:demo_app/repositories/user_repository.dart';
 import 'package:demo_app/ui/common/common_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'body.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -10,7 +13,12 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: CommonUtil.createAppBar(context),
-      body: Body(),
+      body: BlocProvider(
+        create: (context) => RegisterBloc(
+          userRepository: RepositoryProvider.of<UserRepository>(context),
+        ),
+        child: Body(),
+      ),
     );
   }
 }
