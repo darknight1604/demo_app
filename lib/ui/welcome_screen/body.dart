@@ -7,8 +7,6 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String str = 'Pawel Czerwinski';
-    String str2 = '@pawel_czerwinski';
     return Column(
       children: [
         Expanded(
@@ -20,34 +18,60 @@ class Body extends StatelessWidget {
           ),
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'images/avatar-1.png',
-                  ),
-                  Column(
-                    children: [
-                      RobotoText.createBoldText(
-                        str,
-                        size: 13,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      RobotoText.createNormalText(
-                        str2,
-                        size: 11,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            _InformationGroupWidget(),
             _ButtonGroupWidget(),
           ],
         ),
       ],
+    );
+  }
+}
+
+class _InformationGroupWidget extends StatelessWidget {
+  const _InformationGroupWidget({Key? key}) : super(key: key);
+
+  final String str = 'Pawel Czerwinski';
+  final String str2 = '@pawel_czerwinski';
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            width: 167,
+            child: Row(
+              children: [
+                Image.asset(
+                  'images/avatar-1.png',
+                ),
+                SizedBox(width: 10.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RobotoText.createBoldText(
+                      str,
+                      size: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    RobotoText.createNormalText(
+                      str2,
+                      size: 11,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 167,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -71,7 +95,11 @@ class _ButtonGroupWidget extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          createButton('title.register'.tr(), Colors.white, Colors.black),
+          createButton(
+            'title.register'.tr(),
+            Colors.white,
+            Colors.black,
+          ),
         ],
       ),
     );
