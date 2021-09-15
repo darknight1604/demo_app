@@ -10,7 +10,8 @@
         "termsOfService": "Terms of Service",
         "privacyPolicy": "Privacy Policy",
         "processing": "Processing {}",
-        "signUpSuccess": "Sign up success"
+        "signUpSuccess": "Sign up success",
+        "loginSuccess": "Login success"
     },
     "button":{
         "login": "LOG IN",

@@ -9,7 +9,8 @@
         "and": " và ",
         "termsOfService": "Điều khoản dịch vụ",
         "privacyPolicy": "Chính sách bảo mật",
-        "signUpSuccess": "Đăng ký thành công"
+        "signUpSuccess": "Đăng ký thành công",
+        "loginSuccess": "Đăng nhập thành công"
     },
     "button":{
         "login": "ĐĂNG NHẬP",
