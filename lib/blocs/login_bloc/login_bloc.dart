@@ -32,7 +32,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       print('busy');
     } else {
       yield Loading();
-      bool result = await userRepository.login(username, password);
+      bool result =
+          await userRepository.login(username.trim(), password.trim());
       if (result) {
         yield LoginSuccess();
       } else {

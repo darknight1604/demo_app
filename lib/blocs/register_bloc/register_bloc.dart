@@ -29,7 +29,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       print('busy');
     } else {
       yield Loading();
-      bool result = await userRepository.signup(username, password);
+      bool result =
+          await userRepository.signup(username.trim(), password.trim());
       if (result) {
         yield SignUpSuccess();
       } else {
