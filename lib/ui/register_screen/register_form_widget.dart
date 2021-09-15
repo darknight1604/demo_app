@@ -14,6 +14,71 @@ class __RegisterFormWidgetState extends State<_RegisterFormWidget> {
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<RegisterBloc, RegisterState>(
+      listener: (context, state) async {
+        if (state is SignUpSuccess) {
+          await CommonUtil.showSnackBar(context, 'title.signUpSuccess'.tr());
+          Navigator.of(context).popAndPushNamed(RouteGenerator.loginPage);
+        }
+      },
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            CommonUtil.createTextFormField(
+              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+              usernameController,
+              hintText: 'hintText.username'.tr(),
+              validatorFunction: validateUsername,
+            ),
+            CommonUtil.createTextFormField(
+              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+              passwordController,
+              hintText: 'hintText.password'.tr(),
+              isPassword: true,
+              validatorFunction: validatePassword,
+            ),
+            CommonUtil.createTextFormField(
+              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+              confirmPasswordController,
+              hintText: 'hintText.confirmPassword'.tr(),
+              validatorFunction: validateConfirmPassword,
+              isPassword: true,
+            ),
+            SubmitButtonWidget(
+              onPress: () {
+                //validate data
+                if (_formKey.currentState!.validate()) {
+                  context.read<RegisterBloc>().add(
+                        SignUpRequest(
+                          username: usernameController.text,
+                          password: passwordController.text,
+                        ),
+                      );
+                }
+              },
+              child: BlocBuilder<RegisterBloc, RegisterState>(
+                builder: (context, state) {
+                  if (state is Loading) {
+                    return CircularProgressIndicator();
+                  }
+                  return CustomText.createBoldText(
+                    'button.signUp'.tr(),
+                    size: 13,
+                    color: Colors.white,
+                  );
+                },
+              ),
+              padding: const EdgeInsets.only(top: 10.0),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   String? validateUsername(String? value) {
     if (value == null || value.isEmpty) {
       return 'error.usernameEmpty'.tr();
@@ -43,77 +108,5 @@ class __RegisterFormWidgetState extends State<_RegisterFormWidget> {
       return 'error.confirmPasswordNotMatch'.tr();
     }
     return null;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          CommonUtil.createTextFormField(
-            const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-            usernameController,
-            hintText: 'hintText.username'.tr(),
-            validatorFunction: validateUsername,
-          ),
-          CommonUtil.createTextFormField(
-            const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-            passwordController,
-            hintText: 'hintText.password'.tr(),
-            isPassword: true,
-            validatorFunction: validatePassword,
-          ),
-          CommonUtil.createTextFormField(
-            const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-            confirmPasswordController,
-            hintText: 'hintText.confirmPassword'.tr(),
-            validatorFunction: validateConfirmPassword,
-            isPassword: true,
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.black,
-              minimumSize: Size(double.infinity, 52),
-            ),
-            onPressed: () {
-              //hide keyboard when submit
-              if (FocusManager.instance.primaryFocus != null) {
-                FocusManager.instance.primaryFocus!.unfocus();
-              }
-              //validate data
-              if (_formKey.currentState!.validate()) {
-                context.read<RegisterBloc>().add(
-                      SignUpRequest(
-                        username: usernameController.text,
-                        password: passwordController.text,
-                      ),
-                    );
-              }
-            },
-            child: BlocConsumer<RegisterBloc, RegisterState>(
-              builder: (context, state) {
-                if (state is Loading) {
-                  return CircularProgressIndicator();
-                }
-                return CustomText.createBoldText(
-                  'button.signUp'.tr(),
-                  size: 13,
-                  color: Colors.white,
-                );
-              },
-              listener: (context, state) async {
-                if (state is SignUpSuccess) {
-                  await CommonUtil.showSnackBar(
-                      context, 'title.signUpSuccess'.tr());
-                  Navigator.of(context)
-                      .popAndPushNamed(RouteGenerator.loginPage);
-                }
-              },
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }
