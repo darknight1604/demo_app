@@ -1,4 +1,4 @@
-import 'package:demo_app/ui/home_page/home_page_screen.dart';
+import 'package:demo_app/ui/home_page/home_screen.dart';
 import 'package:demo_app/ui/login_screen/login_screen.dart';
 import 'package:demo_app/ui/register_screen/register_screen.dart';
 import 'package:demo_app/ui/welcome_screen/welcome_screen.dart';
@@ -19,7 +19,7 @@ class RouteGenerator {
       case registerPage:
         return MaterialPageRoute(builder: (context) => RegisterScreen());
       case homePage:
-        return MaterialPageRoute(builder: (context) => HomePageScreen());
+        return MaterialPageRoute(builder: (context) => HomeScreen());
       default:
         return _errorRoute();
     }

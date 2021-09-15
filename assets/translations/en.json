@@ -11,7 +11,9 @@
         "privacyPolicy": "Privacy Policy",
         "processing": "Processing {}",
         "signUpSuccess": "Sign up success",
-        "loginSuccess": "Login success"
+        "loginSuccess": "Login success",
+        "discover": "Discover",
+        "whatNewToday": "What's new today"
     },
     "button":{
         "login": "LOG IN",

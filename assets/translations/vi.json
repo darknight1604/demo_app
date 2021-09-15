@@ -10,7 +10,9 @@
         "termsOfService": "Điều khoản dịch vụ",
         "privacyPolicy": "Chính sách bảo mật",
         "signUpSuccess": "Đăng ký thành công",
-        "loginSuccess": "Đăng nhập thành công"
+        "loginSuccess": "Đăng nhập thành công",
+        "discover": "Khám phá",
+        "whatNewToday": "Hôm nay có gì mới"
     },
     "button":{
         "login": "ĐĂNG NHẬP",

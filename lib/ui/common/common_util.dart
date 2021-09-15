@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CommonUtil {
-  static AppBar createAppBar(context) {
+  static AppBar createAppBar(context, {bool isBackable = true}) {
     return AppBar(
-      leading: IconButton(
-        icon: Image.asset("images/back.png"),
-        onPressed: () => Navigator.pop(
-          context,
-        ),
-      ),
+      leading: isBackable
+          ? IconButton(
+              icon: Image.asset("images/back.png"),
+              onPressed: () => Navigator.pop(
+                context,
+              ),
+            )
+          : null,
       backgroundColor: Colors.transparent,
       elevation: 0.0,
     );
