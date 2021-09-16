@@ -57,7 +57,7 @@ class __LoginFormWidgetState extends State<_LoginFormWidget> {
                     return CircularProgressIndicator();
                   }
                   return CustomText.createBoldText(
-                    'button.signUp'.tr(),
+                    'button.login'.tr(),
                     size: 13,
                     color: Colors.white,
                   );
