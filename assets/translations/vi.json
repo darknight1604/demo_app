@@ -18,7 +18,8 @@
     "button":{
         "login": "ĐĂNG NHẬP",
         "register": "ĐĂNG KÝ",
-        "signUp": "ĐĂNG KÝ"
+        "signUp": "ĐĂNG KÝ",
+        "seeMore": "XEM THÊM"
     },
     "hintText":{
         "username": "Tài khoản",

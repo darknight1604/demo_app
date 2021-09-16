@@ -13,7 +13,13 @@ class Loading extends ImageState {}
 
 class ImageLoaded extends ImageState {
   final List<String> images;
-  ImageLoaded({required this.images});
+  final bool isReachedMax;
+  ImageLoaded({
+    required this.images,
+    this.isReachedMax = false,
+  });
+  @override
+  List<Object> get props => [this.images];
 }
 
 class ImageNotFound extends ImageState {}

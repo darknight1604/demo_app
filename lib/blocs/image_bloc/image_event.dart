@@ -7,4 +7,7 @@ abstract class ImageEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GetListImageRequest extends ImageEvent {}
+class GetListImageRequest extends ImageEvent {
+  final bool isInitial;
+  GetListImageRequest({required this.isInitial});
+}

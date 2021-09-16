@@ -19,7 +19,8 @@
     "button":{
         "login": "LOG IN",
         "register": "REGISTER",
-        "signUp": "SIGN UP"
+        "signUp": "SIGN UP",
+        "seeMore": "SEE MORE"
     },
     "hintText":{
         "username": "Username",

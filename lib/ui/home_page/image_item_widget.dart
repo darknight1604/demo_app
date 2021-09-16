@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImageItemWidget extends StatelessWidget {
+  // final int index;
   final String image;
 
   const ImageItemWidget(

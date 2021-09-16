@@ -1,3 +1,4 @@
+import 'package:demo_app/helper/constants.dart';
 import 'package:demo_app/helper/custom_text.dart';
 import 'package:demo_app/route/route.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,7 @@ class ButtonGroupWidget extends StatelessWidget {
             () {
               _handleNavigateLogin(context);
             },
-            borderSide: BorderSide(
-              width: 2.0,
-              color: Colors.black,
-            ),
+            borderSide: Constants.BLACK_BORDER_SIDE,
           ),
           createButton(
             'button.register'.tr(),
