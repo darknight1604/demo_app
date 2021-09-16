@@ -23,10 +23,13 @@ class NewsWidget extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Image.asset(
-            'images/news.png',
-            fit: BoxFit.fitWidth,
-          )
+          Align(
+            alignment: Alignment.center,
+            child: Image.asset(
+              'images/news.png',
+              fit: BoxFit.fitWidth,
+            ),
+          ),
         ],
       ),
     );
