@@ -12,7 +12,8 @@
         "signUpSuccess": "Đăng ký thành công",
         "loginSuccess": "Đăng nhập thành công",
         "discover": "Khám phá",
-        "whatNewToday": "Hôm nay có gì mới"
+        "whatNewToday": "Hôm nay có gì mới",
+        "browseAll": "TẤT CẢ"
     },
     "button":{
         "login": "ĐĂNG NHẬP",
@@ -32,6 +33,7 @@
         "passwordLengthMin": "Vui lòng nhập mật khẩu ít nhất 4 ký tự",
         "passwordLengthMax": "Vui lòng nhập mật khẩu tối đa 10 ký tự",
         "confirmPasswordNotMatch": "Xác nhận mật khẩu không trùng với mật khẩu",
-        "confirmPasswordEmpty": "Vui lòng nhập Xác nhận mật khẩu"
+        "confirmPasswordEmpty": "Vui lòng nhập Xác nhận mật khẩu",
+        "imageNotFound": "Không tìm thấy ảnh"
     }
  }

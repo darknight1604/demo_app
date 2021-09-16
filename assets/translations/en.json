@@ -13,7 +13,8 @@
         "signUpSuccess": "Sign up success",
         "loginSuccess": "Login success",
         "discover": "Discover",
-        "whatNewToday": "What's new today"
+        "whatNewToday": "What's new today",
+        "browseAll": "BROWSE ALL"
     },
     "button":{
         "login": "LOG IN",
@@ -33,6 +34,7 @@
         "passwordLengthMin": "Please input password with length at least 4",
         "passwordLengthMax": "Please input password with length maximum 10",
         "confirmPasswordNotMatch": "Confirm password is not match your password",
-        "confirmPasswordEmpty": "Please input confirm password"
+        "confirmPasswordEmpty": "Please input confirm password",
+        "imageNotFound": "Image not found"
     }
  }

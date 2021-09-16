@@ -2,17 +2,18 @@ import 'package:demo_app/ui/home_page/home_screen.dart';
 import 'package:demo_app/ui/login_screen/login_screen.dart';
 import 'package:demo_app/ui/register_screen/register_screen.dart';
 import 'package:demo_app/ui/welcome_screen/welcome_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 
 class RouteGenerator {
   static const String loginPage = "/loginPage";
   static const String registerPage = "/registerPage";
   static const String homePage = "/homePage";
+  static const String welcomePage = "/";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/':
+      case welcomePage:
         return MaterialPageRoute(builder: (context) => WelcomeScreen());
       case loginPage:
         return MaterialPageRoute(builder: (context) => LoginScreen());

@@ -1,4 +1,5 @@
 import 'package:demo_app/helper/constants.dart';
+import 'package:demo_app/route/route.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
@@ -22,7 +23,9 @@ class BottomNavigationBarWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              createIconButton('home.png', () {}),
+              createIconButton('home.png', () {
+                _handleNavigateWelcomeScreen(context);
+              }),
               createIconButton('search.png', () {}),
               createCenterButton(),
               createIconButton('comment.png', () {}),
@@ -34,6 +37,10 @@ class BottomNavigationBarWidget extends StatelessWidget {
       //color of the BottomAppBar
       color: Colors.white,
     );
+  }
+
+  void _handleNavigateWelcomeScreen(context) {
+    Navigator.of(context).popAndPushNamed(RouteGenerator.welcomePage);
   }
 
   Widget createCenterButton() {
