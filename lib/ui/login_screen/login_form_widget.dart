@@ -12,34 +12,13 @@ class __LoginFormWidgetState extends State<_LoginFormWidget> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  String? validateUsername(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'error.usernameEmpty'.tr();
-    } else if (value.length < 4) {
-      return 'error.usernameLengthMin'.tr();
-    } else if (value.length > 10) {
-      return 'error.usernameLengthMax'.tr();
-    }
-    return null;
-  }
-
-  String? validatePassword(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'error.passwordEmpty'.tr();
-    } else if (value.length < 4) {
-      return 'error.passwordLengthMin'.tr();
-    } else if (value.length > 10) {
-      return 'error.passwordLengthMax'.tr();
-    }
-    return null;
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) async {
         if (state is LoginSuccess) {
           await CommonUtil.showSnackBar(context, 'title.loginSuccess'.tr());
+          await Future.delayed(Duration(milliseconds: 500));
           Navigator.of(context).popAndPushNamed(RouteGenerator.homePage);
         }
       },
@@ -90,5 +69,27 @@ class __LoginFormWidgetState extends State<_LoginFormWidget> {
         ),
       ),
     );
+  }
+
+  String? validateUsername(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'error.usernameEmpty'.tr();
+    } else if (value.length < 4) {
+      return 'error.usernameLengthMin'.tr();
+    } else if (value.length > 10) {
+      return 'error.usernameLengthMax'.tr();
+    }
+    return null;
+  }
+
+  String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'error.passwordEmpty'.tr();
+    } else if (value.length < 4) {
+      return 'error.passwordLengthMin'.tr();
+    } else if (value.length > 10) {
+      return 'error.passwordLengthMax'.tr();
+    }
+    return null;
   }
 }
