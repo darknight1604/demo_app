@@ -1,3 +1,4 @@
+import 'package:demo_app/repositories/image_repository.dart';
 import 'package:demo_app/repositories/user_repository.dart';
 import 'package:demo_app/route/route.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -33,8 +34,15 @@ class MyApp extends StatelessWidget {
           FocusManager.instance.primaryFocus!.unfocus();
         }
       },
-      child: RepositoryProvider(
-        create: (context) => UserRepository(),
+      child: MultiRepositoryProvider(
+        providers: [
+          RepositoryProvider<UserRepository>(
+            create: (context) => UserRepository(),
+          ),
+          RepositoryProvider<ImageRepository>(
+            create: (context) => ImageRepository(),
+          ),
+        ],
         child: MaterialApp(
           title: 'Interview Demo',
           theme: ThemeData(
