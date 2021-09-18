@@ -10,7 +10,7 @@ class CommonUtil {
                 context,
               ),
             )
-          : null,
+          : Container(),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
     );
