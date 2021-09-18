@@ -47,7 +47,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: 40,
+        height: 35,
         width: 70,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(19.0),
