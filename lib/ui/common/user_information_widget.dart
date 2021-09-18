@@ -6,6 +6,7 @@ class UserInformationWidget extends StatelessWidget {
   final String aboveText;
   final String belowText;
   final EdgeInsetsGeometry padding;
+  final Widget rightChild;
 
   const UserInformationWidget({
     Key? key,
@@ -13,6 +14,7 @@ class UserInformationWidget extends StatelessWidget {
     required this.aboveText,
     required this.belowText,
     required this.padding,
+    required this.rightChild,
   }) : super(key: key);
 
   @override
@@ -47,9 +49,7 @@ class UserInformationWidget extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: 167,
-          ),
+          rightChild,
         ],
       ),
     );
