@@ -1,3 +1,4 @@
+import 'package:demo_app/helper/constants.dart';
 import 'package:demo_app/ui/common/user_information_widget.dart';
 import 'package:demo_app/ui/welcome_screen/button_group_widget.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,9 @@ class Body extends StatelessWidget {
               aboveText: 'Pawel Czerwinski',
               belowText: '@pawel_czerwinski',
               padding: EdgeInsets.all(10.0),
+              rightChild: Container(
+                width: Constants.WIDTH,
+              ),
             ),
             ButtonGroupWidget(),
           ],

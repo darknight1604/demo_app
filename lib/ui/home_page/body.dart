@@ -50,6 +50,9 @@ class _BodyState extends State<Body> {
                     aboveText: 'Ridhwan Nordin',
                     belowText: '@ridzjcob',
                     padding: EdgeInsets.only(top: 15.0),
+                    rightChild: Expanded(
+                      child: Container(),
+                    ),
                   ),
                   ListImageWidget(),
                 ],
