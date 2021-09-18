@@ -48,7 +48,7 @@ class ButtonGroupWidget extends StatelessWidget {
       String name, Color textColor, Color backgroundColor, Function onPress,
       {BorderSide? borderSide}) {
     ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-      fixedSize: Size(167, 52),
+      fixedSize: Size(Constants.WIDTH, 52),
       primary: backgroundColor,
       side: borderSide,
     );
