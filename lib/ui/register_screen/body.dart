@@ -16,25 +16,27 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomText.createNormalText(
-            'title.register'.tr(),
-            size: 36,
-            fontFamily: Constants.COMFORTAA,
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-          _RegisterFormWidget(),
-          SizedBox(
-            height: 30.0,
-          ),
-          _PolicyWidget(),
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomText.createNormalText(
+              'title.register'.tr(),
+              size: 36,
+              fontFamily: Constants.COMFORTAA,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            _RegisterFormWidget(),
+            SizedBox(
+              height: 30.0,
+            ),
+            _PolicyWidget(),
+          ],
+        ),
       ),
     );
   }
