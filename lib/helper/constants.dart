@@ -8,6 +8,7 @@ class Constants {
   );
   static const String HAS_NEXT = "has_next";
   static const String DATA = "data";
+  static const double WIDTH = 167;
 }
 
 class HexColor extends Color {
