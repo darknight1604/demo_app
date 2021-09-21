@@ -1,6 +1,7 @@
 # demo_app
 
 A new Flutter project.
+Using internationalization, darkmode, flutter_bloc
 
 ## Getting Started
 
