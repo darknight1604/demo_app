@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CommonUtil {
   static AppBar createAppBar(context, {bool isBackable = true}) {
@@ -57,5 +58,27 @@ class CommonUtil {
         ),
       ),
     );
+  }
+
+  static String? validateUsername(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'error.usernameEmpty'.tr();
+    } else if (value.length < 4) {
+      return 'error.usernameLengthMin'.tr();
+    } else if (value.length > 10) {
+      return 'error.usernameLengthMax'.tr();
+    }
+    return null;
+  }
+
+  static String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'error.passwordEmpty'.tr();
+    } else if (value.length < 4) {
+      return 'error.passwordLengthMin'.tr();
+    } else if (value.length > 10) {
+      return 'error.passwordLengthMax'.tr();
+    }
+    return null;
   }
 }

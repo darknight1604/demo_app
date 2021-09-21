@@ -30,14 +30,14 @@ class __LoginFormWidgetState extends State<_LoginFormWidget> {
               const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
               usernameController,
               hintText: 'hintText.username'.tr(),
-              validatorFunction: validateUsername,
+              validatorFunction: CommonUtil.validateUsername,
             ),
             CommonUtil.createTextFormField(
               const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
               passwordController,
               hintText: 'hintText.password'.tr(),
               isPassword: true,
-              validatorFunction: validatePassword,
+              validatorFunction: CommonUtil.validatePassword,
             ),
             SubmitButtonWidget(
               onPress: () {
@@ -69,27 +69,5 @@ class __LoginFormWidgetState extends State<_LoginFormWidget> {
         ),
       ),
     );
-  }
-
-  String? validateUsername(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'error.usernameEmpty'.tr();
-    } else if (value.length < 4) {
-      return 'error.usernameLengthMin'.tr();
-    } else if (value.length > 10) {
-      return 'error.usernameLengthMax'.tr();
-    }
-    return null;
-  }
-
-  String? validatePassword(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'error.passwordEmpty'.tr();
-    } else if (value.length < 4) {
-      return 'error.passwordLengthMin'.tr();
-    } else if (value.length > 10) {
-      return 'error.passwordLengthMax'.tr();
-    }
-    return null;
   }
 }
